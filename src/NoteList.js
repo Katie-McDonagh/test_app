@@ -10,15 +10,10 @@ class NoteList extends Component {
   }
   addNote = (e) => {
     this.setState({ note: e.target.value });
-
   };
 
   displayNote = (e) => {
-    let n = this.state.note
-    let array = this.state.notesArray
-    array.push(n)
-    this.setState({noteArray: array})
-    // this.setState({finalNote: this.state.note});
+    this.setState({ notesArray: [...this.state.notesArray, this.state.note] });
     e.preventDefault();
   };
 
@@ -27,20 +22,17 @@ class NoteList extends Component {
       <div className="NoteList">
         <form>
           <label>
-            Name:
-            <input type="text" name="name" onChange={this.addNote}/>
+            Note:
+            <input type="text" name="name" onChange={this.addNote} />
           </label>
-          <input type="submit" value="Submit" onClick={this.displayNote}  />
+          <input type="submit" value="Submit" onClick={this.displayNote} />
         </form>
-        <div className='parent'>
-        <ul>
-        {this.state.notesArray.map(function (note, index) {
-            return (
-              
-              <li key={index}>{note}</li>
-            )
-        })}
-        </ul>
+        <div className="parent">
+          <ul>
+            {this.state.notesArray.map(function (note, index) {
+              return <li key={index}>{note}</li>;
+            })}
+          </ul>
         </div>
       </div>
     );
