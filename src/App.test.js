@@ -1,8 +1,17 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from "react";
+import "@testing-library/jest-dom";
+import { render, screen } from "@testing-library/react";
 
-test('renders learn react link', () => {
+import App from "./App";
+
+// test('Shows Hello, world!', () => {
+//   render(<App />)
+
+//   expect(screen.getByText('Hello, World!')).toBeInTheDocument()
+// })
+
+test("Shows hello world", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+  expect(screen.getByText("Hello, World!")).toBeInTheDocument();
 });

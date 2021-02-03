@@ -11,6 +11,11 @@
     "react-scripts": "4.0.1",
     "web-vitals": "^0.2.4"
   },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css)$": "<rootDir>/__mocks__/styleMock.js"
+    }
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
