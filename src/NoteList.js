@@ -34,10 +34,10 @@ class NoteList extends Component {
         </form>
         <div className='parent'>
         <ul>
-        {this.state.notesArray.map(function (note) {
+        {this.state.notesArray.map(function (note, index) {
             return (
               
-              <li>{note}</li>
+              <li key={index}>{note}</li>
             )
         })}
         </ul>
